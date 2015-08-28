@@ -3,11 +3,12 @@ package com.example.recyclerviewdemo;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.animatiors.AlphaInAnimationAdapter;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.LayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -26,7 +27,7 @@ public class MainActivity extends Activity {
 		initViews();
 		
 		recAadpter = new RecAadpter(this, myData);
-		recyclerView.setAdapter(recAadpter);
+		recyclerView.setAdapter(new AlphaInAnimationAdapter(recAadpter));
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 		recyclerView.setLayoutManager(linearLayoutManager);
 	}
